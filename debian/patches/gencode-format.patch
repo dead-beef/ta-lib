@@ -1,0 +1,13 @@
+diff --git a/src/tools/gen_code/gen_code.c b/src/tools/gen_code/gen_code.c
+index 6052aca..c4f50e7 100644
+--- a/src/tools/gen_code/gen_code.c
++++ b/src/tools/gen_code/gen_code.c
+@@ -3612,7 +3612,7 @@ static void printFuncHeaderDoc( FILE *out,
+    int first;
+ 
+    fprintf( out, "%sTA_%s - %s\n", prefix, funcInfo->name, funcInfo->hint );
+-   fprintf( out, prefix );
++   fprintf( out, "%s", prefix );
+ 
+    fprintf( out, "\n" );
+    fprintf( out, "%sInput  = ", prefix );

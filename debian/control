@@ -1,0 +1,11 @@
+Source: ta-lib
+Maintainer: user user <user@localhost.localdomain>
+Section: misc
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9), autotools-dev
+
+Package: ta-lib
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Technical Analysis Library

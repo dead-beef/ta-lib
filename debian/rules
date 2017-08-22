@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	sh autogen.sh
+	./configure
+
+override_dh_auto_build:
+	$(MAKE)
+
+override_dh_auto_install:
+	$(MAKE) DESTDIR=$$(pwd)/debian/ta-lib PREFIX= install
+	-rm -rf $$(pwd)/debian/ta-lib/usr/include
+	mv $$(pwd)/debian/ta-lib/usr/local/* $$(pwd)/debian/ta-lib/usr/
+	rm -rf $$(pwd)/debian/ta-lib/usr/local/
